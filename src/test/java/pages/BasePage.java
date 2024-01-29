@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public abstract class BasePage {
-    final String BASE_URL = "https://log.finalsurge.com";
+    final String BASE_URL = "https://log.finalsurge.com/";
     WebDriverWait wait;
     WebDriver driver;
 

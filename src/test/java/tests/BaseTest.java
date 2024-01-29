@@ -7,12 +7,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
+import pages.LoginPage;
 
 import java.time.Duration;
 
 @Listeners(TestListener.class)
 public class BaseTest {
     WebDriver driver;
+    LoginPage loginPage;
     @Parameters({"browser"})
     @BeforeMethod(description = "Настройка браузера")
     public void setup(@Optional("chrome") String browser, ITestContext testContext) {
@@ -26,13 +28,14 @@ public class BaseTest {
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
             }
-            testContext.setAttribute("driver", driver);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        }
+        testContext.setAttribute("driver", driver);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        loginPage = new LoginPage(driver);
+    }
 
     @AfterMethod(alwaysRun = true, description = "Закрытие браузера")
     public void tearDown() {
         driver.quit();
-        }
+    }
 }
 
