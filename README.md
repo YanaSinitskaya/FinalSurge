@@ -4,7 +4,7 @@
     Website to create a workout plan
     
     CHECKLIST:
-    - Login (empty email / empty password / successful login)
+    - Login 
     - Add workouts on Workout page
     - Add quick workouts on Calendar page
     - Remove workouts from the calendar 
