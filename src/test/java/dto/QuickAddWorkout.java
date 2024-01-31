@@ -13,8 +13,12 @@ public class QuickAddWorkout {
     String activityType;
     String workoutName;
     String workoutDescription;
-    String distance;
+    String distanceNumber;
+    String distanceType;
     String duration;
-    String pace;
+    String paceNumber;
+    String paceType;
+    String howFeel;
+    String perEffort;
     String postWorkoutNotesResults;
 }

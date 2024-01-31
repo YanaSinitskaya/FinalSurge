@@ -12,7 +12,9 @@ public class TextArea {
         this.label = label;
     }
 
-    public void write(String text){
-        driver.findElement(By.xpath(String.format("//label[contains(text(),'%s')]/ancestor::div/textarea",label))).sendKeys(text);
+    public void write(String text) {
+        if (text != null) {
+            driver.findElement(By.xpath(String.format("//label[contains(text(),'%s')]/ancestor::div/textarea", label))).sendKeys(text);
+        }
     }
 }

@@ -21,6 +21,7 @@ public class BaseTest {
     CalculatorPage calculatorPage;
     QuickAddWorkoutModalPage quickAddWorkoutModalPage;
     QuickAddWorkoutListPage quickAddWorkoutListPage;
+    CalendarPage calendarPage;
     public static final String USER = "asya.gadzhiyan@gmail.com";
     public static final String PASSWORD = "1408asyA!";
 
@@ -37,15 +38,16 @@ public class BaseTest {
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
             }
-
         testContext.setAttribute("driver", driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
         loginPage = new LoginPage(driver);
         basePage = new BasePage(driver);
         workoutPage = new WorkoutPage(driver);
         quickAddWorkoutModalPage = new QuickAddWorkoutModalPage(driver);
         quickAddWorkoutListPage = new QuickAddWorkoutListPage(driver);
         calculatorPage = new CalculatorPage(driver);
+        calendarPage = new CalendarPage(driver);
     }
 
     @AfterMethod(alwaysRun = true, description = "Close browser")

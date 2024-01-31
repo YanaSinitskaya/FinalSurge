@@ -13,6 +13,8 @@ public class Input {
         this.label = label;
     }
     public void write(String text) {
-        driver.findElement(By.xpath(String.format("//label[text()='%s']/..//input", label))).sendKeys(text);
+        if (text != null) {
+            driver.findElement(By.xpath(String.format("//label[text()='%s']/..//input", label))).sendKeys(text);
+        }
     }
 }
