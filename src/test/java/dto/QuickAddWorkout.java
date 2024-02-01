@@ -21,4 +21,13 @@ public class QuickAddWorkout {
     String howFeel;
     String perEffort;
     String postWorkoutNotesResults;
+    String pDistance;
+    String pDistanceType;
+    String pDuration;
+    String overallPlace;
+    String ageGroupPlace;
+
+    String showPlannedDistanceDuration;
+    String markAsRace;
+    String saveToLibrary;
 }

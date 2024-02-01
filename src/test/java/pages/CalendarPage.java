@@ -17,11 +17,17 @@ public class CalendarPage extends BasePage {
         driver.get(CALENDAR_URL);
     }
 
-    // ПОСМОТРЕТЬ ЛОКАТОР!!
+    /* ПОСМОТРЕТЬ ЛОКАТОР!!
+    @Step("Add activity OnCalendar")
     public void addActivityOnCalendar() {
         driver.findElement(By.cssSelector(".calendar-add dropdown")).click();
+    } */
+
+    public void addQuickWorkout() {
+        driver.findElement(By.id("QuickAddToggle")).click();
     }
 
+    @Step("Save Workout on Calendar")
     public void saveWorkoutOnCalendar() {
         driver.findElement(ADD_WORKOUT_BUTTON);
     }

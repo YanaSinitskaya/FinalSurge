@@ -2,6 +2,7 @@ package wrappers;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class DropDown {
     WebDriver driver;
@@ -18,6 +19,12 @@ public class DropDown {
         }
     }
 }
+    /* WebElement element =
+    driver.findElement(By.xpath(String.format("//*[text()='%s']//ancestor::lightning-combobox//button", label)));
+
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+                    element.click();
+    driver.findElement(By.xpath(String.format("//*[text()='%s']//ancestor::lightning-combobox//*[text()='%s']", label, option))).click(); */
 
 
 
