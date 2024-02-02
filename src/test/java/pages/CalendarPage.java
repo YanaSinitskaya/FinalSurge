@@ -10,7 +10,6 @@ public class CalendarPage extends BasePage {
     }
 
     final String CALENDAR_URL = BASE_URL + "Calendar.cshtml";
-    final By ADD_WORKOUT_BUTTON = By.id("saveButton");
 
     @Step("Open calendar page")
     public void open() {
@@ -23,13 +22,8 @@ public class CalendarPage extends BasePage {
         driver.findElement(By.cssSelector(".calendar-add dropdown")).click();
     } */
 
-    public void addQuickWorkout() {
+    public void addQuickWorkoutWithButton() {
         driver.findElement(By.id("QuickAddToggle")).click();
-    }
-
-    @Step("Save Workout on Calendar")
-    public void saveWorkoutOnCalendar() {
-        driver.findElement(ADD_WORKOUT_BUTTON);
     }
 
 }

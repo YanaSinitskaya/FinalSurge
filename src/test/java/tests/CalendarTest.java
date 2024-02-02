@@ -14,17 +14,17 @@ public class CalendarTest extends BaseTest {
                 .workoutName("RunTest")
                 .workoutDescription("Testing this workout")
                 .distanceNumber("7")
-                //.distanceType("")
-                .duration("0:20:33")
-                .paceNumber("4:11")
-                //.paceType("")
-                //  .howFeel("Good")
-               // .perEffort("2 (Light)")
+                .distanceType("mi")
+                .duration("00:20:33")
+                .paceNumber("04:11")
+                .paceType("min/mi")
+                .howFeel("Good")
+                .perEffort("2 (Light)")
                 .postWorkoutNotesResults("Super")
 
                 .showPlannedDistanceDuration("")
                 .pDistance("21")
-                //.pDistanceType("")
+                .pDistanceType("mi")
                 .pDuration("0:19:33")
 
                 .markAsRace("")
@@ -36,8 +36,9 @@ public class CalendarTest extends BaseTest {
         loginPage.open();
         loginPage.login(USER, PASSWORD);
         calendarPage.open();
-        calendarPage.addQuickWorkout();
+        calendarPage.addQuickWorkoutWithButton();
         quickAddWorkoutModalPage.fillingInAllFields(newQuickWorkout);
-        calendarPage.saveWorkoutOnCalendar();
+        quickAddWorkoutModalPage.save();
+
     }
 }

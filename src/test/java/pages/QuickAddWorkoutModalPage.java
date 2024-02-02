@@ -33,16 +33,16 @@ public class QuickAddWorkoutModalPage extends BasePage {
         new DropDown(driver, "Perceived Effort").select(quickAddWorkout.getPerEffort());
         new TextArea(driver, "Post Workout Notes/Results").write(quickAddWorkout.getPostWorkoutNotesResults());
 
-        new Checkbox(driver, "Show Planned Distance/Duration");
+        new Checkbox(driver, "Show Planned Distance/Duration").select();
         new Input(driver, "Planned Distance").write(quickAddWorkout.getPDistance());
         new DropDown(driver, "Planned Distance").select(quickAddWorkout.getPDistanceType());
         new Input(driver, "Planned Duration").write(quickAddWorkout.getPDuration());
 
-        new Checkbox(driver, "Mark as Race");
+        new Checkbox(driver, "Mark as Race").select();
         new Input(driver, "Age Group Place").write(quickAddWorkout.getAgeGroupPlace());
         new Input(driver, "Overall Place").write(quickAddWorkout.getOverallPlace());
 
-        new Checkbox(driver, "Save to Library");
+        new Checkbox(driver, "Save to Library").select();
         return this;
     }
 
