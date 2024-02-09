@@ -22,6 +22,7 @@ public class BaseTest {
     QuickAddWorkoutModalPage quickAddWorkoutModalPage;
     QuickAddWorkoutListPage quickAddWorkoutListPage;
     CalendarPage calendarPage;
+    WorkoutReportPage workoutReportPage;
     public static final String USER = "asya.gadzhiyan@gmail.com";
     public static final String PASSWORD = "1408asyA!";
 
@@ -48,6 +49,7 @@ public class BaseTest {
         quickAddWorkoutListPage = new QuickAddWorkoutListPage(driver);
         calculatorPage = new CalculatorPage(driver);
         calendarPage = new CalendarPage(driver);
+        workoutReportPage = new WorkoutReportPage(driver);
     }
 
     @AfterMethod(alwaysRun = true, description = "Close browser")

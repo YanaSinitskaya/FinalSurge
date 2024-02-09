@@ -36,7 +36,8 @@ public class WorkoutPage extends BasePage {
     final By ELOSS = By.id("ELoss");
     final By PEREFFORT = By.id("PerEffort");
     final By SAVE_BUTTON = By.id("saveButton");
-    final By DROPDOWN_TOGGEL = By.className("dropdown-toggle");
+    //final By DROPDOWN_TOGGEL = By.className("dropdown-toggle");
+    final By DROPDOWN_TOGGEL = By.cssSelector(".dropdown-toggle");
 
     public void open() {
         driver.get(BASE_URL + WORKOUT_URL);
@@ -44,50 +45,51 @@ public class WorkoutPage extends BasePage {
 
     @Step("Open tabs")
     public void tabOpen(String tab) {
-        driver.findElement(By.cssSelector("[data-code=" + tab + "]")).click();
+        //driver.findElement(By.cssSelector("[data-code=" + tab + "]")).click();
+        driver.findElement(By.xpath(String.format("//a[@data-code='%s']", tab))).click();
     }
 
-    @Step("Filling workout date: Date - '{date}'")
+    @Step("Fill workout date: Date - '{date}'")
     public void dateWorkout(String date) {
         driver.findElement(WORKOUTDATE).clear();
         driver.findElement(WORKOUTDATE).sendKeys(date);
     }
 
-    @Step("Filling workout time: Time - '{time}'")
+    @Step("Fill workout time: Time - '{time}'")
     public void timeWorkout(String time) {
         driver.findElement(WORKOUTTIME).sendKeys(time);
     }
 
-    @Step("Filling workout name: Name - '{name}'")
+    @Step("Fill workout name: Name - '{name}'")
     public void nameWorkout(String name) {
         driver.findElement(WORKOUTNAME).sendKeys(name);
     }
 
-    @Step("Filling workout description: Description - '{description}'")
+    @Step("Fill workout description: Description - '{description}'")
     public void descriptionWorkout(String description) {
         driver.findElement(WORKOUTDESCR).sendKeys(description);
     }
 
-    @Step("Filling workout distance: Distance - '{distance}'")
+    @Step("Fill workout distance: Distance - '{distance}'")
     public void distanceWorkout(String distance) {
         driver.findElement(WORKOUTDIST).sendKeys(distance);
         Select select = new Select(driver.findElement(DISTTYPE));
         select.selectByVisibleText("m");
     }
 
-    @Step("Filling workout distance: Distance - '{distance}'")
+    @Step("Fill workout distance: Distance - '{distance}'")
     public void distanceForCrossTrainingWorkout(String distance) {
         driver.findElement(DISTNOINT).sendKeys(distance);
         Select select = new Select(driver.findElement(DISTNOINT));
         select.selectByVisibleText("m");
     }
 
-    @Step("Filling workout duration: Duration - '{duration}'")
+    @Step("Fill workout duration: Duration - '{duration}'")
     public void durationWorkout(String duration) {
         driver.findElement(DURATION).sendKeys(duration);
     }
 
-    @Step("Filling workout duration: Duration - '{duration}'")
+    @Step("Fill workout duration: Duration - '{duration}'")
     public void durationNoIntWorkout(String duration) {
         driver.findElement(DURATIONNOINT).sendKeys(duration);
     }
@@ -97,47 +99,46 @@ public class WorkoutPage extends BasePage {
         driver.findElement(TINTERVALS).click();
     }
 
-    @Step("Filling workout reps: Reps - '{reps}'")
+    @Step("Fill workout reps: Reps - '{reps}'")
     public void repsOfSetWorkout(String reps) {
         driver.findElement(SETREPS1).sendKeys(reps);
     }
 
-    @Step("Filling workout distance: Distance - '{distance}'")
+    @Step("Fill workout distance: Distance - '{distance}'")
     public void distanceOfSetWorkout(String distance) {
         driver.findElement(SETDIST1).sendKeys(distance);
     }
 
-    @Step("Filling workout duration: Duration - '{duration}'")
+    @Step("Fill workout duration: Duration - '{duration}'")
     public void durationOfSetWorkout(String duration) {
         driver.findElement(SETTIME1).sendKeys(duration);
     }
 
-    @Step("Filling HR inputs: MinHR - '{minHR}', AvgHR - '{avgHR}', MaxHR - '{maxHR}'")
+    @Step("Fill HR inputs: MinHR - '{minHR}', AvgHR - '{avgHR}', MaxHR - '{maxHR}'")
     public void hrWorkout(String minHR, String avgHR, String maxHR) {
         driver.findElement(MINHR).sendKeys(minHR);
         driver.findElement(AVHR).sendKeys(avgHR);
         driver.findElement(MAXHR).sendKeys(maxHR);
     }
 
-    @Step("Filling kCal input: KCal - '{kCal}'")
+    @Step("Fill kCal input: KCal - '{kCal}'")
     public void kCalWorkout(String kCal) {
         driver.findElement(KCAL).sendKeys(kCal);
     }
 
-
-    @Step("Filling pow: PowAvg - '{kCal}', PowMax - '{powMax}'")
+    @Step("Fill pow: PowAvg - '{kCal}', PowMax - '{powMax}'")
     public void powWorkout(String powAvg, String powMax) {
         driver.findElement(POWAVG).sendKeys(powAvg);
         driver.findElement(POWMAX).sendKeys(powMax);
     }
 
-    @Step("Filling cad: CadAvg - '{cadAvg}', CadMax - '{cadMax}'")
+    @Step("Fill cad: CadAvg - '{cadAvg}', CadMax - '{cadMax}'")
     public void cadWorkout(String cadAvg, String cadMax) {
         driver.findElement(CADAVG).sendKeys(cadAvg);
         driver.findElement(CADMAX).sendKeys(cadMax);
     }
 
-    @Step("Filling Elevation: Elevation Gain - '{EGain}', Elevation Loss - '{ELoss}'")
+    @Step("Fill Elevation: Elevation Gain - '{EGain}', Elevation Loss - '{ELoss}'")
     public void elevationWorkout(String elevationGain, String elevationLoss) {
         driver.findElement(EGAIN).sendKeys(elevationGain);
         driver.findElement(ELOSS).sendKeys(elevationLoss);
@@ -145,7 +146,8 @@ public class WorkoutPage extends BasePage {
 
     @Step("The sign of Feels")
     public void howIFelt(String feel) {
-        driver.findElement(By.id("hf_" + feel)).click();
+        //driver.findElement(By.id("hf_" + feel)).click();
+        driver.findElement(By.name("howfeel")).click();
     }
 
     @Step("The sign of Perceived Effort")
@@ -164,4 +166,5 @@ public class WorkoutPage extends BasePage {
         return driver.findElement(DROPDOWN_TOGGEL).isDisplayed();
     }
 }
+
 

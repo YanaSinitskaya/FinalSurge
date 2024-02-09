@@ -27,7 +27,9 @@ public class QuickAddWorkoutModalPage extends BasePage {
         new Input(driver, "Distance").write(quickAddWorkout.getDistanceNumber());
         new DropDown(driver, "Distance").select(quickAddWorkout.getDistanceType());
         new Input(driver, "Duration").write(quickAddWorkout.getDuration());
+        driver.findElement(By.id("Pace")).clear();
         new Input(driver, "Pace").write(quickAddWorkout.getPaceNumber());
+
         new DropDown(driver, "Distance").select(quickAddWorkout.getPaceType());
         new DropDown(driver, "How I Felt").select(quickAddWorkout.getHowFeel());
         new DropDown(driver, "Perceived Effort").select(quickAddWorkout.getPerEffort());

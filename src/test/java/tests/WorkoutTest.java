@@ -10,7 +10,7 @@ public class WorkoutTest extends BaseTest {
         loginPage.open();
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
-        workoutPage.tabOpen("Run");
+        workoutPage.tabOpen("run");
         workoutPage.dateWorkout("1/31/2024");
         workoutPage.timeWorkout("10:00");
         workoutPage.nameWorkout("Run");
