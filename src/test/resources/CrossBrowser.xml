@@ -9,6 +9,7 @@
             <class name="tests.LoginTest"/>
             <class name="tests.WorkoutTest"/>
             <class name="tests.CalculatorTest"/>
+            <class name="tests.CalendarTest"/>
             <parameter name="browser" value="chrome"></parameter>
         </classes>
     </test> <!-- Test -->
@@ -17,6 +18,7 @@
             <class name="tests.LoginTest"/>
             <class name="tests.WorkoutTest"/>
             <class name="tests.CalculatorTest"/>
+            <class name="tests.CalendarTest"/>
             <parameter name="browser" value="firefox"></parameter>
         </classes>
     </test> <!-- Test -->

@@ -27,14 +27,17 @@ public class LoginPage extends BasePage {
         driver.findElement(PASSWORD).submit();
     }
 
+    @Step("Successful login")
     public boolean successfulLogin() {
         return driver.findElement(MAIN_PAGE).isDisplayed();
     }
 
+    @Step("Get text of error message ")
     public String errorMessage() {
         return driver.findElement(ERROR).getText();
     }
 
+    @Step("Get text of error invalid Login ")
     public String invalidLogin() {
         return driver.findElement(INVALID_LOGIN_ERROR).getText();
     }

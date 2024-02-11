@@ -36,7 +36,6 @@ public class WorkoutPage extends BasePage {
     final By ELOSS = By.id("ELoss");
     final By PEREFFORT = By.id("PerEffort");
     final By SAVE_BUTTON = By.id("saveButton");
-    //final By DROPDOWN_TOGGEL = By.className("dropdown-toggle");
     final By DROPDOWN_TOGGEL = By.cssSelector(".dropdown-toggle");
 
     public void open() {
@@ -45,7 +44,6 @@ public class WorkoutPage extends BasePage {
 
     @Step("Open tabs")
     public void tabOpen(String tab) {
-        //driver.findElement(By.cssSelector("[data-code=" + tab + "]")).click();
         driver.findElement(By.xpath(String.format("//a[@data-code='%s']", tab))).click();
     }
 

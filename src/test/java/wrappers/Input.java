@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 
 @Log4j2
 public class Input {
-    public static final String INPUT_LOCATOR = "%s";
     WebDriver driver;
     String label;
 

@@ -12,11 +12,18 @@ public class FullAddWorkout {
     String timeOfDay;
     String workoutName;
     String workoutDescription;
-    String distance;
+    String distanceNumber;
+    String distanceType;
     String duration;
-    String pace;
+    String paceNumber;
+    String paceType;
+    String howIFelt;
+    String perceivedEffort;
     String minHR;
     String avgHR;
     String maxHR;
     String caloriesBurned;
+    String reps;
+    boolean showPlannedDistanceDuration;
+    boolean markAsRace;
 }

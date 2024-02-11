@@ -19,10 +19,9 @@ public class BaseTest {
     BasePage basePage;
     WorkoutPage workoutPage;
     CalculatorPage calculatorPage;
-    QuickAddWorkoutModalPage quickAddWorkoutModalPage;
-    QuickAddWorkoutListPage quickAddWorkoutListPage;
+    QuickAddWorkoutPage quickAddWorkoutPage;
     CalendarPage calendarPage;
-    WorkoutReportPage workoutReportPage;
+
     public static final String USER = "asya.gadzhiyan@gmail.com";
     public static final String PASSWORD = "1408asyA!";
 
@@ -45,11 +44,9 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         basePage = new BasePage(driver);
         workoutPage = new WorkoutPage(driver);
-        quickAddWorkoutModalPage = new QuickAddWorkoutModalPage(driver);
-        quickAddWorkoutListPage = new QuickAddWorkoutListPage(driver);
+        quickAddWorkoutPage = new QuickAddWorkoutPage(driver);
         calculatorPage = new CalculatorPage(driver);
         calendarPage = new CalendarPage(driver);
-        workoutReportPage = new WorkoutReportPage(driver);
     }
 
     @AfterMethod(alwaysRun = true, description = "Close browser")

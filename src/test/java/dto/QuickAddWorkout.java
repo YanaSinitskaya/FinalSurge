@@ -26,8 +26,7 @@ public class QuickAddWorkout {
     String pDuration;
     String overallPlace;
     String ageGroupPlace;
-
-    String showPlannedDistanceDuration;
-    String markAsRace;
-    String saveToLibrary;
+    boolean showPlannedDistanceDuration;
+    boolean markAsRace;
+    boolean saveToLibrary;
 }
