@@ -5,8 +5,9 @@
     
     CHECKLIST:
     - Login 
-    - Add workouts on Workout page
+    - Add full workouts on Workout page
     - Add quick workouts on Calendar page
+    - Calculator test - Caloric Needs / Pace Calculator
     - Remove workouts from the calendar 
 
     Stack:
