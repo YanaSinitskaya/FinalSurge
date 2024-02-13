@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class BasePage {
@@ -16,7 +15,6 @@ public class BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-
     public void waitForPageLoaded() {
         new ExpectedCondition<Boolean>() {
            public Boolean apply(WebDriver driver) {
@@ -25,5 +23,3 @@ public class BasePage {
         };
     }
 }
-
-

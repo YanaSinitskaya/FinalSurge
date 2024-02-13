@@ -11,6 +11,7 @@ public class Checkbox {
         this.driver = driver;
         this.label = label;
     }
+
     public void select(boolean isNeedToSelect) {
         if (isNeedToSelect) {
             driver.findElement(By.xpath(String.format("//*[text()='%s']//ancestor::label[contains(@class,'checkbox inline')]//input", label))).click();

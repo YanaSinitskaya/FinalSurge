@@ -2,6 +2,7 @@ package tests;
 
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class CalculatorTest extends BaseTest {
@@ -31,5 +32,4 @@ public class CalculatorTest extends BaseTest {
         calculatorPage.saveButton();
         assertTrue(calculatorPage.getCaloricNeeds(), "Caloric Need is calculated");
     }
-
 }

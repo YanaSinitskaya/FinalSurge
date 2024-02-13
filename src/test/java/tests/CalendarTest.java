@@ -1,8 +1,6 @@
 package tests;
 
 import dto.QuickAddWorkout;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -61,7 +59,4 @@ public class CalendarTest extends BaseTest {
         calendarPage.deleteWorkoutFromCalendar("2/4/2024");
         Assert.assertEquals(calendarPage.QuickWorkOutIsDisplayed("4", "2","2024"), false, "The workout isn't deleted");
     }
-
 }
-
-

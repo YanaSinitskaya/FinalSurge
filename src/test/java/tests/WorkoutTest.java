@@ -11,7 +11,7 @@ public class WorkoutTest extends BaseTest {
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
         workoutPage.tabOpen("run");
-        workoutPage.dateWorkout("1/31/2024");
+        workoutPage.dateWorkout("2/31/2024");
         workoutPage.timeWorkout("10:00");
         workoutPage.nameWorkout("Run");
         workoutPage.descriptionWorkout("Running in Loshitsa Park");
@@ -22,6 +22,8 @@ public class WorkoutTest extends BaseTest {
         workoutPage.hrWorkout("100", "110", "150");
         workoutPage.kCalWorkout("260");
         workoutPage.saveWorkout();
+        driver.get ("https://log.finalsurge.com/Calendar.cshtml");
+        driver.navigate().refresh();
         assertTrue(workoutPage.getWorkout(), "Workout added");
     }
 
@@ -30,7 +32,7 @@ public class WorkoutTest extends BaseTest {
         loginPage.open();
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
-        workoutPage.tabOpen("Bike");
+        workoutPage.tabOpen("bike");
         workoutPage.dateWorkout("2/22/2024");
         workoutPage.timeWorkout("16:00");
         workoutPage.nameWorkout("Bike");
@@ -45,6 +47,8 @@ public class WorkoutTest extends BaseTest {
         workoutPage.hrWorkout("110", "120", "150");
         workoutPage.kCalWorkout("600");
         workoutPage.saveWorkout();
+        driver.get ("https://log.finalsurge.com/Calendar.cshtml");
+        driver.navigate().refresh();
         assertTrue(workoutPage.getWorkout(), "Workout added");
     }
 
@@ -53,8 +57,8 @@ public class WorkoutTest extends BaseTest {
         loginPage.open();
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
-        workoutPage.tabOpen("Swim");
-        workoutPage.dateWorkout("2/5/2024");
+        workoutPage.tabOpen("swim");
+        workoutPage.dateWorkout("2/27/2024");
         workoutPage.timeWorkout("16:00");
         workoutPage.nameWorkout("Swim");
         workoutPage.descriptionWorkout("Swimming pool");
@@ -67,6 +71,8 @@ public class WorkoutTest extends BaseTest {
         workoutPage.perceivedEffort("9 (Very Hard)");
         workoutPage.kCalWorkout("200");
         workoutPage.saveWorkout();
+        driver.get ("https://log.finalsurge.com/Calendar.cshtml");
+        driver.navigate().refresh();
         assertTrue(workoutPage.getWorkout(), "Workout added");
     }
 
@@ -76,7 +82,7 @@ public class WorkoutTest extends BaseTest {
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
         workoutPage.tabOpen("cross-trai");
-        workoutPage.dateWorkout("2/12/2024");
+        workoutPage.dateWorkout("2/19/2024");
         workoutPage.timeWorkout("12:00");
         workoutPage.nameWorkout("Cross");
         workoutPage.descriptionWorkout("Cross in the park");
@@ -87,6 +93,8 @@ public class WorkoutTest extends BaseTest {
         workoutPage.hrWorkout("100", "120", "140");
         workoutPage.kCalWorkout("500");
         workoutPage.saveWorkout();
+        driver.get ("https://log.finalsurge.com/Calendar.cshtml");
+        driver.navigate().refresh();
         assertTrue(workoutPage.getWorkout(), "Workout added");
     }
 
@@ -95,7 +103,7 @@ public class WorkoutTest extends BaseTest {
         loginPage.open();
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
-        workoutPage.tabOpen("Walk");
+        workoutPage.tabOpen("walk");
         workoutPage.dateWorkout("2/22/2024");
         workoutPage.timeWorkout("16:00");
         workoutPage.nameWorkout("Walk");
@@ -110,6 +118,8 @@ public class WorkoutTest extends BaseTest {
         workoutPage.hrWorkout("110", "120", "150");
         workoutPage.kCalWorkout("600");
         workoutPage.saveWorkout();
+        driver.get ("https://log.finalsurge.com/Calendar.cshtml");
+        driver.navigate().refresh();
         assertTrue(workoutPage.getWorkout(), "Workout added");
     }
 
@@ -118,11 +128,13 @@ public class WorkoutTest extends BaseTest {
         loginPage.open();
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
-        workoutPage.tabOpen("Rest");
-        workoutPage.dateWorkout("2/2/2024");
+        workoutPage.tabOpen("rest");
+        workoutPage.dateWorkout("2/27/2024");
         workoutPage.nameWorkout("Rest");
         workoutPage.descriptionWorkout("Resting at home");
         workoutPage.saveWorkout();
+        driver.get ("https://log.finalsurge.com/Calendar.cshtml");
+        driver.navigate().refresh();
         assertTrue(workoutPage.getWorkout(), "Workout added");
     }
 
@@ -132,7 +144,7 @@ public class WorkoutTest extends BaseTest {
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
         workoutPage.tabOpen("strength-t");
-        workoutPage.dateWorkout("5/12/2024");
+        workoutPage.dateWorkout("2/28/2024");
         workoutPage.timeWorkout("17:30");
         workoutPage.nameWorkout("Strength Training");
         workoutPage.descriptionWorkout("Strength Training in the yoga class");
@@ -140,6 +152,8 @@ public class WorkoutTest extends BaseTest {
         workoutPage.howIFelt("Great");
         workoutPage.perceivedEffort("6 (Moderate)");
         workoutPage.saveWorkout();
+        driver.get ("https://log.finalsurge.com/Calendar.cshtml");
+        driver.navigate().refresh();
         assertTrue(workoutPage.getWorkout(), "Workout added");
     }
 
@@ -148,12 +162,14 @@ public class WorkoutTest extends BaseTest {
         loginPage.open();
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
-        workoutPage.tabOpen("Recovery");
-        workoutPage.dateWorkout("2/13/2024");
+        workoutPage.tabOpen("recovery");
+        workoutPage.dateWorkout("2/19/2024");
         workoutPage.timeWorkout("16:30");
         workoutPage.nameWorkout("Recovery");
         workoutPage.descriptionWorkout("Recovery");
         workoutPage.saveWorkout();
+        driver.get ("https://log.finalsurge.com/Calendar.cshtml");
+        driver.navigate().refresh();
         assertTrue(workoutPage.getWorkout(), "Workout added");
     }
 
@@ -162,12 +178,14 @@ public class WorkoutTest extends BaseTest {
         loginPage.open();
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
-        workoutPage.tabOpen("Other");
-        workoutPage.dateWorkout("2/16/2024");
+        workoutPage.tabOpen("other");
+        workoutPage.dateWorkout("2/23/2024");
         workoutPage.timeWorkout("20:00");
         workoutPage.nameWorkout("Stretching");
         workoutPage.descriptionWorkout("Stretching");
         workoutPage.saveWorkout();
+        driver.get ("https://log.finalsurge.com/Calendar.cshtml");
+        driver.navigate().refresh();
         assertTrue(workoutPage.getWorkout(), "Workout added");
     }
 
@@ -176,8 +194,8 @@ public class WorkoutTest extends BaseTest {
         loginPage.open();
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
-        workoutPage.tabOpen("Transition");
-        workoutPage.dateWorkout("2/22/2024");
+        workoutPage.tabOpen("transition");
+        workoutPage.dateWorkout("2/27/2024");
         workoutPage.timeWorkout("16:00");
         workoutPage.nameWorkout("Transition");
         workoutPage.descriptionWorkout("");
@@ -191,7 +209,8 @@ public class WorkoutTest extends BaseTest {
         workoutPage.hrWorkout("110", "120", "150");
         workoutPage.kCalWorkout("300");
         workoutPage.saveWorkout();
+        driver.get ("https://log.finalsurge.com/Calendar.cshtml");
+        driver.navigate().refresh();
         assertTrue(workoutPage.getWorkout(), "Workout added");
     }
 }
-
