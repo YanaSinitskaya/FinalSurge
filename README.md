@@ -1,7 +1,8 @@
     FinalSurge (https://log.finalsurge.com)
     
     Description:
-    Final Surge is the training and coaching platform that empowers athletes and coaches to reach fitness and performance excellence like never before.
+    Final Surge is the training and coaching platform that empowers athletes and 
+    coaches to reach fitness and performance excellence like never before.
     
     CHECKLIST:
     - Login 
@@ -17,4 +18,4 @@
     - Selenium 
     - Allure Report
     - Lombok
-    - Git 
+    - Git / GitHub Actions
