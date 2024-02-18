@@ -34,13 +34,13 @@ public class CalendarPage extends BasePage {
 
     @Step("Check that visibility of workout element on Calendar")
     public boolean QuickWorkOutIsDisplayed(String day, String month, String year, String training) {
-        log.info("Quick Workout is displayed on the Calendar page on '{}', '{}', '{}'", day, month, year);
+        log.info("Quick Workout is displayed on the Calendar page '{}', '{}', '{}', '{}'", day, month, year, training);
         return driver.findElement(By.xpath(String.format("//div[@class='fc-day-content' and @data-day='%s' and @data-month='%s' and @data-year='%s']//following-sibling::div[contains(@class, 'fc-event-activity-title') and text()='%s']", day, month, year, training))).isDisplayed();
     }
 
     @Step("Delete Workout from Calendar")
     public void deleteWorkoutFromCalendar(String day, String month, String year, String training) {
-        log.info("Workout '{}' is deleted from the Calendar on date '{}', '{}', '{}'", training, day, month, year);
+        log.info("Workout is deleted from the Calendar on date '{}', '{}', '{}', {}", day, month, year, training);
         driver.findElement(By.xpath(String.format("//div[@class='fc-day-content' and @data-day='%s' and @data-month='%s' and @data-year='%s']//following-sibling::div[contains(@class, 'fc-event-activity-title') and text()='%s']", day, month, year, training))).click();
         driver.findElement(DELETE_BUTTON_DROPDOWN).click();
         driver.findElement(OK_BUTTON).click();
