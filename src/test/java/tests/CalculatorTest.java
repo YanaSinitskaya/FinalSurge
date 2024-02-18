@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -31,5 +32,32 @@ public class CalculatorTest extends BaseTest {
         calculatorPage.runDistance("10");
         calculatorPage.saveButton();
         assertTrue(calculatorPage.getCaloricNeeds(), "Caloric Need is calculated");
+    }
+
+    @DataProvider(name = "Input data for negative tests for pace calculator")
+    public Object[][] paceValues() {
+        return new Object[][]{
+                {"", "", "", "", "×\nPlease fix the following errors:\n" +
+                        "*Please enter an Integer value for Minutes.\n"},
+                {"0", "0", "0", "0", "×\nPlease fix the following errors:\n" +
+                        "*Please enter a distance greater than 0.\n" +
+                        "*Please enter a time greater than 0 seconds.\n"},
+                {"qw", "qw", "qw", "qw", "×\nPlease fix the following errors:\n" +
+                        "*Please enter a valid Integer for Hours (no decimals).\n" +
+                        "*Please enter a valid Integer for Minutes (no decimals).\n" +
+                        "*Please enter a valid Integer for Seconds (no decimals).\n"},
+        };
+    }
+
+    @Test(dataProvider = "Input data for negative tests for pace calculator", retryAnalyzer = Retry.class)
+    public void valuesForPaceCalcShouldBeRequired(String distance, String hours, String minutes, String seconds, String error) {
+        loginPage.open();
+        loginPage.login(USER, PASSWORD);
+        calculatorPage.open();
+        calculatorPage.paceCalc();
+        calculatorPage.distance(distance);
+        calculatorPage.time(hours, minutes, seconds);
+        calculatorPage.saveButton();
+        assertEquals(calculatorPage.getError(), error, "Wrong error message");
     }
 }
