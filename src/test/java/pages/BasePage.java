@@ -8,7 +8,8 @@ import utils.PropertyReader;
 import java.time.Duration;
 
 public class BasePage {
-    final String BASE_URL = PropertyReader.getProperty("sf.base.url");
+    //final String BASE_URL = PropertyReader.getProperty("sf.base.url");
+    final String BASE_URL = "https://log.finalsurge.com/";
     WebDriverWait wait;
     WebDriver driver;
 
