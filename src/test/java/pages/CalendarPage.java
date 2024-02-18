@@ -16,7 +16,7 @@ public class CalendarPage extends BasePage {
     final static Date TODAY_DATE = new Date();
     final String CALENDAR_URL = BASE_URL + "Calendar.cshtml";
     final By QUICK_WORKOUT_BUTTON = By.id("QuickAddToggle");
-    final By OK_BUTTON = By.xpath("//a[@class='btn btn-primary']");
+    final By OK_BUTTON = By.cssSelector("a[class='btn btn-primary']");
     final By DELETE_BUTTON_DROPDOWN = By.xpath("//div[@class='dropdown calendarworkout drag-workout-source drag-workout-reorder-target ui-draggable ui-droppable open']" +
             "//a[contains(@class,'quick-delete') and text()='Delete']");
 

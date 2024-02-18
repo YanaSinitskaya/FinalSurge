@@ -14,12 +14,4 @@ public class BasePage {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
-
-    public void waitForPageLoaded() {
-        new ExpectedCondition<Boolean>() {
-           public Boolean apply(WebDriver driver) {
-                return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
-            }
-        };
-    }
 }

@@ -20,7 +20,7 @@ public class QuickAddWorkoutPage extends BasePage {
     final By WORKOUT_DATE = By.id("WorkoutDate");
 
     @Step("Fill in all fields in Quick Add Workout")
-    public QuickAddWorkoutPage fillingFields (QuickAddWorkout quickAddWorkout) {
+    public QuickAddWorkoutPage fillFields(QuickAddWorkout quickAddWorkout) {
         log.info("Data filling on the 'Quick Add Workout' page");
         driver.findElement(WORKOUT_DATE).clear();
         new Input(driver, "Date").write(quickAddWorkout.getWorkoutDate());
@@ -31,9 +31,9 @@ public class QuickAddWorkoutPage extends BasePage {
         new Input(driver, "Distance").write(quickAddWorkout.getDistanceNumber());
         new DropDown(driver, "Distance").select(quickAddWorkout.getDistanceType());
         new Input(driver, "Duration").write(quickAddWorkout.getDuration());
+        new DropDown(driver, "Pace").select(quickAddWorkout.getPaceType());
         driver.findElement(By.id("Pace")).clear();
         new Input(driver, "Pace").write(quickAddWorkout.getPaceNumber());
-        new DropDown(driver, "Pace").select(quickAddWorkout.getPaceType());
         new DropDown(driver, "How I Felt").select(quickAddWorkout.getHowFeel());
         new DropDown(driver, "Perceived Effort").select(quickAddWorkout.getPerEffort());
         new TextArea(driver, "Post Workout Notes/Results").write(quickAddWorkout.getPostWorkoutNotesResults());
