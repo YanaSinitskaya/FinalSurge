@@ -11,8 +11,8 @@ public class WorkoutTest extends BaseTest {
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
         workoutPage.tabOpen("run");
-        workoutPage.dateWorkout("2/24/2024");
-        workoutPage.timeWorkout("14:00");
+        workoutPage.dateWorkout("2/23/2024");
+        workoutPage.timeWorkout("10:00");
         workoutPage.nameWorkout("Run");
         workoutPage.descriptionWorkout("Running in Loshitsa Park");
         workoutPage.distanceWorkout("3000");
@@ -58,7 +58,7 @@ public class WorkoutTest extends BaseTest {
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
         workoutPage.tabOpen("swim");
-        workoutPage.dateWorkout("2/26/2024");
+        workoutPage.dateWorkout("2/20/2024");
         workoutPage.timeWorkout("16:00");
         workoutPage.nameWorkout("Swim");
         workoutPage.descriptionWorkout("Swimming pool");
@@ -101,7 +101,7 @@ public class WorkoutTest extends BaseTest {
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
         workoutPage.tabOpen("walk");
-        workoutPage.dateWorkout("2/25/2024");
+        workoutPage.dateWorkout("2/21/2024");
         workoutPage.timeWorkout("16:00");
         workoutPage.nameWorkout("walk");
         workoutPage.descriptionWorkout("Walk in the park");
@@ -126,7 +126,7 @@ public class WorkoutTest extends BaseTest {
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
         workoutPage.tabOpen("rest");
-        workoutPage.dateWorkout("2/28/2024");
+        workoutPage.dateWorkout("2/18/2024");
         workoutPage.nameWorkout("Rest");
         workoutPage.descriptionWorkout("Resting at home");
         workoutPage.saveWorkout();
@@ -141,7 +141,7 @@ public class WorkoutTest extends BaseTest {
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
         workoutPage.tabOpen("strength-t");
-        workoutPage.dateWorkout("2/28/2024");
+        workoutPage.dateWorkout("2/17/2024");
         workoutPage.timeWorkout("17:30");
         workoutPage.nameWorkout("Strength Training");
         workoutPage.descriptionWorkout("Strength Training in the yoga class");
@@ -160,7 +160,7 @@ public class WorkoutTest extends BaseTest {
         loginPage.login(USER, PASSWORD);
         workoutPage.open();
         workoutPage.tabOpen("recovery");
-        workoutPage.dateWorkout("2/28/2024");
+        workoutPage.dateWorkout("2/22/2024");
         workoutPage.timeWorkout("16:30");
         workoutPage.nameWorkout("Recovery");
         workoutPage.descriptionWorkout("Recovery");
@@ -177,7 +177,7 @@ public class WorkoutTest extends BaseTest {
         workoutPage.open();
         workoutPage.tabOpen("other");
         workoutPage.dateWorkout("2/23/2024");
-        workoutPage.timeWorkout("20:00");
+        workoutPage.timeWorkout("13:00");
         workoutPage.nameWorkout("Stretching");
         workoutPage.descriptionWorkout("Stretching");
         workoutPage.saveWorkout();
