@@ -51,7 +51,6 @@ public class BaseTest {
 
         System.getenv().getOrDefault("user", PropertyReader.getProperty("sf.user"));
         System.getenv().getOrDefault("password", PropertyReader.getProperty("sf.password"));
-        System.getenv().getOrDefault("base_url", PropertyReader.getProperty("sf.base.url"));
     }
 
     @AfterMethod(alwaysRun = true, description = "Close browser")
