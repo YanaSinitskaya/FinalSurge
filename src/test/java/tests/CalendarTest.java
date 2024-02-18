@@ -4,7 +4,6 @@ import dto.QuickAddWorkout;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CalendarPage;
-
 import java.util.Calendar;
 
 public class CalendarTest extends BaseTest {
@@ -231,10 +230,9 @@ public class CalendarTest extends BaseTest {
         calendarPage.deleteWorkoutFromCalendar(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
                 CalendarPage.getValueByType(Calendar.MONTH),
                 CalendarPage.getValueByType(Calendar.YEAR), newQuickWorkout.getActivityType()+":"+" "+newQuickWorkout.getWorkoutName());
-        /*Assert.assertEquals(calendarPage.QuickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
-                     CalendarPage.getValueByType(Calendar.MONTH),
-                    CalendarPage.getValueByType(Calendar.YEAR), newQuickWorkout.getActivityType()+":"+" "+newQuickWorkout.getWorkoutName()),
-               false,
-               "The workout isn't deleted");*/
+        Assert.assertFalse(calendarPage.QuickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
+                CalendarPage.getValueByType(Calendar.MONTH),
+                CalendarPage.getValueByType(Calendar.YEAR),
+                newQuickWorkout.getActivityType() + ":" + " " + newQuickWorkout.getWorkoutName()), "The workout isn't deleted");
     }
 }
