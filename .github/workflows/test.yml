@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Run UI test
+name: Run FinalSurge Diploma tests
 
 on:
   push:
@@ -32,8 +32,8 @@ jobs:
         browser: chrome
         version: latest
     - name: Run FinalSurge Automated tests Smoke
-      run: mvn clean test -Duser=$USER -Dpassword=$PASSWORD -Dtoken=$TOKEN
+      run: mvn clean test -Duser=$USER -Dpassword=$PASSWORD
       env:
-        USER: ${{ secrets.QASE_USER }}
-        PASSWORD: ${{ secrets.QASE_PASSWORD }}
-        TOKEN: ${{ secrets.QASE_TOKEN }}
+        USER: ${{secrets.SF_USER}}
+        PASSWORD: ${{secrets.SF_PASSWORD}}
+

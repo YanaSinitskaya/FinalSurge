@@ -3,10 +3,12 @@ package pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.PropertyReader;
+
 import java.time.Duration;
 
 public class BasePage {
-    final String BASE_URL = "https://log.finalsurge.com/";
+    final String BASE_URL = PropertyReader.getProperty("sf.base.url");
     WebDriverWait wait;
     WebDriver driver;
 
