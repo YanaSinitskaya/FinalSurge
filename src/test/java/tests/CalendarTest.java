@@ -42,7 +42,7 @@ public class CalendarTest extends BaseTest {
         calendarPage.addQuickWorkoutWithButton();
         quickAddWorkoutPage.fillFields(newQuickWorkout);
         quickAddWorkoutPage.save();
-        Assert.assertEquals(calendarPage.QuickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
+        Assert.assertEquals(calendarPage.quickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
                         CalendarPage.getValueByType(Calendar.MONTH),
                         CalendarPage.getValueByType(Calendar.YEAR), newQuickWorkout.getActivityType()+":"+" "+newQuickWorkout.getWorkoutName()),
                 true,
@@ -83,7 +83,7 @@ public class CalendarTest extends BaseTest {
         calendarPage.addQuickWorkoutWithButton();
         quickAddWorkoutPage.fillFields(newQuickWorkout);
         quickAddWorkoutPage.save();
-        Assert.assertEquals(calendarPage.QuickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
+        Assert.assertEquals(calendarPage.quickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
                         CalendarPage.getValueByType(Calendar.MONTH),
                         CalendarPage.getValueByType(Calendar.YEAR), newQuickWorkout.getActivityType()+":"+" "+newQuickWorkout.getWorkoutName()),
                 true,
@@ -124,7 +124,7 @@ public class CalendarTest extends BaseTest {
         calendarPage.addQuickWorkoutWithButton();
         quickAddWorkoutPage.fillFields(newQuickWorkout);
         quickAddWorkoutPage.save();
-        Assert.assertEquals(calendarPage.QuickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
+        Assert.assertEquals(calendarPage.quickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
                         CalendarPage.getValueByType(Calendar.MONTH),
                         CalendarPage.getValueByType(Calendar.YEAR), newQuickWorkout.getActivityType()+":"+" "+newQuickWorkout.getWorkoutName()),
                 true,
@@ -165,7 +165,7 @@ public class CalendarTest extends BaseTest {
         calendarPage.addQuickWorkoutWithButton();
         quickAddWorkoutPage.fillFields(newQuickWorkout);
         quickAddWorkoutPage.save();
-        Assert.assertEquals(calendarPage.QuickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
+        Assert.assertEquals(calendarPage.quickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
                         CalendarPage.getValueByType(Calendar.MONTH),
                         CalendarPage.getValueByType(Calendar.YEAR), newQuickWorkout.getActivityType()+":"+" "+newQuickWorkout.getWorkoutName()),
                 true,
@@ -206,7 +206,7 @@ public class CalendarTest extends BaseTest {
         calendarPage.addQuickWorkoutWithButton();
         quickAddWorkoutPage.fillFields(newQuickWorkout);
         quickAddWorkoutPage.save();
-        Assert.assertEquals(calendarPage.QuickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
+        Assert.assertEquals(calendarPage.quickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
                         CalendarPage.getValueByType(Calendar.MONTH),
                         CalendarPage.getValueByType(Calendar.YEAR), newQuickWorkout.getActivityType()+":"+" "+newQuickWorkout.getWorkoutName()),
                 true,
@@ -218,21 +218,21 @@ public class CalendarTest extends BaseTest {
         QuickAddWorkout newQuickWorkout = QuickAddWorkout.builder()
                 .workoutDate(CalendarPage.getTodayDate())
                 .activityType("Cross Training")
-                .workoutName("Cross Training Delete")
+                .workoutName("Delete")
 
                 .build();
+        String day = CalendarPage.getValueByType(Calendar.DAY_OF_MONTH);
+        String month = CalendarPage.getValueByType(Calendar.MONTH);
+        String year = CalendarPage.getValueByType(Calendar.YEAR);
+        String training = newQuickWorkout.getActivityType() + ":" + " " + newQuickWorkout.getWorkoutName();
         loginPage.open();
         loginPage.login(USER, PASSWORD);
         calendarPage.open();
         calendarPage.addQuickWorkoutWithButton();
         quickAddWorkoutPage.fillFields(newQuickWorkout);
         quickAddWorkoutPage.save();
-        calendarPage.deleteWorkoutFromCalendar(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
-                CalendarPage.getValueByType(Calendar.MONTH),
-                CalendarPage.getValueByType(Calendar.YEAR), newQuickWorkout.getActivityType()+":"+" "+newQuickWorkout.getWorkoutName());
-        Assert.assertFalse(calendarPage.QuickWorkOutIsDisplayed(CalendarPage.getValueByType(Calendar.DAY_OF_MONTH),
-                CalendarPage.getValueByType(Calendar.MONTH),
-                CalendarPage.getValueByType(Calendar.YEAR),
-                newQuickWorkout.getActivityType() + ":" + " " + newQuickWorkout.getWorkoutName()), "The workout isn't deleted");
+        calendarPage.deleteWorkoutFromCalendar(day, month,year, training);
+        calendarPage.waitUntilTrainingDisappear(day, month, year, training);
+        Assert.assertFalse(calendarPage.quickWorkOutIsDisplayed(day, month, year, training), "The workout isn't deleted");
     }
 }

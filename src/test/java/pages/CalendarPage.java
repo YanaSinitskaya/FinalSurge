@@ -5,10 +5,12 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.NoSuchElementException;
 
 @Log4j2
 public class CalendarPage extends BasePage {
@@ -34,23 +36,23 @@ public class CalendarPage extends BasePage {
     }
 
     @Step("Check that visibility of workout element on Calendar")
-    public boolean QuickWorkOutIsDisplayed(String day, String month, String year, String training) throws NoSuchElementException  {
-        log.info("Quick Workout is displayed on the Calendar page on '{}', '{}', '{}'", day, month, year);
-        try {
-            if (driver.findElement(By.xpath(String.format("//div[@class='fc-day-content' and @data-day='%s' and @data-month='%s' and @data-year='%s']//following-sibling::div[contains(@class, 'fc-event-activity-title') and text()='%s']", day, month, year, training))).isDisplayed()){
+    public boolean quickWorkOutIsDisplayed(String day, String month, String year, String training) {
+        log.info("Quick Workout '{}' is displayed on the Calendar page on '{}', '{}', '{}'", training, day, month, year);
+            int size = driver.findElements(By.xpath(String.format("//div[@class='fc-day-content' and @data-day='%s' and @data-month='%s' and @data-year='%s']" +
+                    "//following-sibling::div[contains(@class, 'fc-event-activity-title') and text()='%s']", day, month, year, training))).size();
+            if (size > 0) {
                 return true;
+            } else {
+                return false;
             }
-            }
-        catch (NoSuchElementException e) {
-            return false;
-        }
-        return false;
     }
+
 
     @Step("Delete Workout from Calendar")
     public void deleteWorkoutFromCalendar(String day, String month, String year, String training) {
         log.info("Workout '{}' is deleted from the Calendar on date '{}', '{}', '{}'", training, day, month, year);
-        driver.findElement(By.xpath(String.format("//div[@class='fc-day-content' and @data-day='%s' and @data-month='%s' and @data-year='%s']//following-sibling::div[contains(@class, 'fc-event-activity-title') and text()='%s']", day, month, year, training))).click();
+        driver.findElement(By.xpath(String.format("//div[@class='fc-day-content' and @data-day='%s' and @data-month='%s' and @data-year='%s']" +
+                "//following-sibling::div[contains(@class, 'fc-event-activity-title') and text()='%s']", day, month, year, training))).click();
         driver.findElement(DELETE_BUTTON_DROPDOWN).click();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("document.querySelector('.btn.btn-primary',':before').click();");
@@ -63,7 +65,7 @@ public class CalendarPage extends BasePage {
     }
 
     @Step("Get value of today date")
-    public static String getValueByType(int typeOfDate){
+    public static String getValueByType(int typeOfDate) {
         int valueToAdd = 0;
         if (typeOfDate == Calendar.MONTH) {
             valueToAdd += 1;
@@ -71,5 +73,14 @@ public class CalendarPage extends BasePage {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(TODAY_DATE);
         return  String.valueOf(calendar.get(typeOfDate) + valueToAdd);
+    }
+
+    public void waitUntilTrainingDisappear (String day, String month, String year, String training) {
+        int seconds = 3;
+        Duration durationInSeconds = Duration.ofSeconds(seconds);
+        WebDriverWait wait = new WebDriverWait(driver, durationInSeconds);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated
+                (By.xpath(String.format("//div[@class='fc-day-content' and @data-day='%s' and @data-month='%s' and @data-year='%s']" +
+                        "//following-sibling::div[contains(@class, 'fc-event-activity-title') and text()='%s']", day, month, year, training))));
     }
 }
