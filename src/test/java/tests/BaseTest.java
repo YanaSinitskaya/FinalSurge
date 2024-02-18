@@ -26,7 +26,6 @@ public class BaseTest {
     public static final String USER = "asya.gadzhiyan@gmail.com";
     public static final String PASSWORD = "1408asyA!";
 
-
     @Parameters({"browser"})
     @BeforeMethod(description = "Browser settings")
     public void setup(@Optional("chrome") String browser, ITestContext testContext) {
@@ -50,10 +49,9 @@ public class BaseTest {
         calculatorPage = new CalculatorPage(driver);
         calendarPage = new CalendarPage(driver);
 
-        String user = System.getenv().getOrDefault("user", PropertyReader.getProperty("sf.user"));
-        System.out.println(user);
-        String password = System.getenv().getOrDefault("password", PropertyReader.getProperty("sf.password"));
-        System.out.println(password);
+        System.getenv().getOrDefault("user", PropertyReader.getProperty("sf.user"));
+        System.getenv().getOrDefault("password", PropertyReader.getProperty("sf.password"));
+        System.getenv().getOrDefault("base_url", PropertyReader.getProperty("sf.base.url"));
     }
 
     @AfterMethod(alwaysRun = true, description = "Close browser")
